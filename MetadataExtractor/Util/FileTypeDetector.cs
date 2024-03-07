@@ -58,6 +58,8 @@ namespace MetadataExtractor.Util
             { FileType.Orf, "IIRS"u8.ToArray(), [0x08, 0x00] },
             { FileType.Raf, "FUJIFILMCCD-RAW"u8 },
             { FileType.Rw2, "II"u8.ToArray(), [0x55, 0x00] },
+            { FileType.Jp2000, [0x00, 0x00, 0x00, 0x0c, (byte)'j', (byte)'P', 0x20, 0x20, 0x0d, 0x0a, 0x87, 0x0a] },
+            { FileType.Jp2000, [0x00, 0x00, 0x00, 0x0c, (byte)'j', (byte)'P', 0x1a, 0x1a, 0x0d, 0x0a, 0x87, 0x0a] },
         };
 
         private static FileType TryDisambiguate(FileType detectedFileType, string fileName)

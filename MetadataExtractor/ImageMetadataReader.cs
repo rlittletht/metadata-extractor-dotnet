@@ -8,6 +8,7 @@ using MetadataExtractor.Formats.FileType;
 using MetadataExtractor.Formats.Gif;
 using MetadataExtractor.Formats.Heif;
 using MetadataExtractor.Formats.Ico;
+using MetadataExtractor.Formats.Jp2000;
 using MetadataExtractor.Formats.Jpeg;
 using MetadataExtractor.Formats.Mpeg;
 using MetadataExtractor.Formats.Netpbm;
@@ -83,6 +84,7 @@ namespace MetadataExtractor
                 FileType.GoPro     => TiffMetadataReader.ReadMetadata(stream),
                 FileType.Heif      => HeifMetadataReader.ReadMetadata(stream),
                 FileType.Ico       => IcoMetadataReader.ReadMetadata(stream),
+                FileType.Jp2000    => Jp2000MetadataReader.ReadMetadata(stream),
                 FileType.Jpeg      => JpegMetadataReader.ReadMetadata(stream),
                 FileType.Kdc       => TiffMetadataReader.ReadMetadata(stream),
                 FileType.Mp3       => Mp3MetadataReader.ReadMetadata(stream),
@@ -103,7 +105,6 @@ namespace MetadataExtractor
                 FileType.Tiff      => TiffMetadataReader.ReadMetadata(stream),
                 FileType.Wav       => WavMetadataReader.ReadMetadata(stream),
                 FileType.WebP      => WebPMetadataReader.ReadMetadata(stream),
-
                 FileType.Unknown   => throw new ImageProcessingException("File format could not be determined"),
                 _                  => Enumerable.Empty<Directory>()
             });

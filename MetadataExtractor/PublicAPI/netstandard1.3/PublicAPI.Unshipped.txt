@@ -121,6 +121,7 @@ MetadataExtractor.Util.FileType.Kdc = 31 -> MetadataExtractor.Util.FileType
 MetadataExtractor.Util.FileType.ThreeFR = 32 -> MetadataExtractor.Util.FileType
 MetadataExtractor.Util.FileType.Pef = 33 -> MetadataExtractor.Util.FileType
 MetadataExtractor.Util.FileType.Srw = 34 -> MetadataExtractor.Util.FileType
+MetadataExtractor.Util.FileType.Jp2000 = 35 -> MetadataExtractor.Util.FileType
 override MetadataExtractor.Formats.Exif.Makernotes.AppleRunTimeMakernoteDescriptor.GetDescription(int tagType) -> string?
 override MetadataExtractor.Formats.Exif.Makernotes.AppleRunTimeMakernoteDirectory.Name.get -> string!
 override MetadataExtractor.Formats.Exif.Makernotes.NikonPictureControl1Descriptor.GetDescription(int tagType) -> string?

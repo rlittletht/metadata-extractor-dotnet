@@ -110,6 +110,9 @@ namespace MetadataExtractor.Util
 
         /// <summary>SRW (Samsung) Image File Format.</summary>
         Srw = 34,
+
+        /// <summary>JPEG-2000 Image File Format</summary>
+        Jp2000 = 35,
     }
 
     public static class FileTypeExtensions
@@ -151,6 +154,7 @@ namespace MetadataExtractor.Util
             "3FR",
             "PEF",
             "SRW",
+            "JPEG2000",
         ];
 
         private static readonly string[] _longNames =
@@ -190,6 +194,7 @@ namespace MetadataExtractor.Util
             "Hasselblad Raw",
             "Pentax Raw",
             "Samsung Raw",
+            "JPEG 2000",
         ];
 
         private static readonly string?[] _mimeTypes =
@@ -229,6 +234,7 @@ namespace MetadataExtractor.Util
             "image/x-hasselblad-3fr",
             "image/x-pentax-pef",
             "image/x-samsung-srw",
+            "image/jp2",
         ];
 
         private static readonly string[]?[] _extensions =
@@ -268,6 +274,7 @@ namespace MetadataExtractor.Util
             ["3fr"],
             ["pef"],
             ["srw"],
+            ["jp2","jpx"]
         ];
 
         public static string GetName(this FileType fileType)
