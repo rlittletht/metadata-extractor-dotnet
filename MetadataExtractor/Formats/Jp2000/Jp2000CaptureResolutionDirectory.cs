@@ -4,32 +4,18 @@ namespace MetadataExtractor.Formats.Jp2000;
 
 /// <summary>Describes tags parsed from JPEG 2000 Header:Resolution:CaptureResolution box, holding resolution X/Y and X/Y units</summary>
 /// <author>Robert Little https://github.com/rlittletht</author>
-public class Jp2000CaptureResolutionDirectory : Directory
+public class Jp2000CaptureResolutionDirectory : Jp2000DirectoryBase
 {
-    /// <summary>Y Capture Resolution from JP2000 Image Header</summary>
-    public const int TagResX= 1;
-
-    /// <summary>Y Capture Resolution from JP2000 Image Header</summary>
-    public const int TagResY= 2;
-
-    /// <summary>X Unit from JP2000 Image Header</summary>
-    public const int TagXUnit = 3;
-
-    /// <summary>Y Unit from JP2000 Image Header</summary>
-    public const int TagYUnit = 4;
-
-    private static readonly Dictionary<int, string> _tagNameMap =
-        new()
-        {
-            { TagResX, "X Resolution" },
-            { TagResY, "Y Resolution" },
-            { TagXUnit, "X Unit" },
-            { TagYUnit, "Y Unit" }
-        };
+    private static readonly Dictionary<int, string> _tagNameMap = new();
 
     public Jp2000CaptureResolutionDirectory() : base(_tagNameMap)
     {
         SetDescriptor(new TagDescriptor<Jp2000CaptureResolutionDirectory>(this));
+    }
+
+    static Jp2000CaptureResolutionDirectory()
+    {
+        AddJp2000TagNames(_tagNameMap);
     }
 
     public override string Name => "JP2000 Capture Resolution";

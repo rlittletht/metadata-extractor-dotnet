@@ -20,7 +20,7 @@ public class Jp2000CaptureResolutionReader : Jp2000DirectoryReader
             JpRational32U.StaticFactory),
         new Record(
             Jp2000CaptureResolutionDirectory.TagXUnit,
-            RecordType.Int16,
+            RecordType.Byte,
             new RecordLength(1),
             new Dictionary<IRecordValue, string>()
             {
